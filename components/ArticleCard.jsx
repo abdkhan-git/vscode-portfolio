@@ -13,10 +13,10 @@ const ArticleCard = ({ article }) => {
       className={styles.container}
     >
       <Image
-        src={article.cover_image}
-        alt={article.title}
-        width={300}
-        height={150}
+          src={article.cover_image || '/default-image.jpg'} // Provide a default image source if cover_image is null
+          alt={article.title || 'Default Alt Text'} // Provide a default alt text if title is null
+          width={300}
+          height={150}
       />
       <div className={styles.content}>
         <h3 className={styles.title}>{article.title}</h3>
