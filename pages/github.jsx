@@ -26,10 +26,10 @@ const GithubPage = ( { repos, user } ) => {
                     <h3 className={ styles.username }>{ user.login }</h3>
                 </div>
                 <div>
-                    <h3>{ user.public_repos } repositories</h3>
+                    <h3>{ user.public_repos } repositórios</h3>
                 </div>
                 <div>
-                    <h3>{ user.followers } followers</h3>
+                    <h3>{ user.followers } seguidores</h3>
                 </div>
             </div>
             <div className={styles.contributions}>
