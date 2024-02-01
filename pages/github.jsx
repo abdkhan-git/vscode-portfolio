@@ -45,16 +45,17 @@ const GithubPage = () => {
                         />
                     </a>
                 )}
+                <a className={styles.username}>{user.login}</a>
                 <span>
           <a href={`${user.html_url}?tab=repositories`} target="blank">
-            <FontAwesomeIcon icon={faGithub} className={styles.icon} />{" "}
+            <FontAwesomeIcon icon={faGithub} className={styles.icon}/>{" "}
               {user.public_repos} Public Repos
           </a>
         </span>
 
                 <span>
           <a href={user.followers_url}>
-            <FontAwesomeIcon icon={faUsers} className={styles.icon} />{" "}
+            <FontAwesomeIcon icon={faUsers} className={styles.icon}/>{" "}
               {`${user.followers} Followers`}
           </a>
         </span>
