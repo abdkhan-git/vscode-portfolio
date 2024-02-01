@@ -27,7 +27,7 @@
 /* Dracula */
 [data-theme='dracula'] {
   --main-bg: #282a36;
-  --bg-text: #313340;
+  --bg-text: #b9bbc9;
   --text-color: #efefef;
   --accent-color: #bd93f9;
   --titlebar-bg: #1e1f29;
@@ -53,7 +53,7 @@
 /* Ayu Dark */
 [data-theme='ayu-dark'] {
   --main-bg: #0a0e14;
-  --bg-text: #101620;
+  --bg-text: #d0d0d0;
   --text-color: #efefef;
   --accent-color: #e6b450;
   --titlebar-bg: #1f2428;
@@ -105,7 +105,7 @@
 /* Nord */
 [data-theme='nord'] {
   --main-bg: #2e3440;
-  --bg-text: #3b414d;
+  --bg-text: #e11919;
   --text-color: #efefef;
   --accent-color: #88c0d0;
   --titlebar-bg: #1f2428;
@@ -131,7 +131,7 @@
 /* Night Owl */
 [data-theme='night-owl'] {
   --main-bg: #011627;
-  --bg-text: #031d33;
+  --bg-text: #d8e0ea;
   --text-color: #89a4bb;
   --accent-color: rgb(95, 126, 151);
   --titlebar-bg: #011627;

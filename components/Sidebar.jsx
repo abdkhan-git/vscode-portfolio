@@ -7,7 +7,12 @@ import PencilIcon from './icons/PencilIcon';
 import MailIcon from './icons/MailIcon';
 import AccountIcon from './icons/AccountIcon';
 import SettingsIcon from './icons/SettingsIcon';
+import LinkedInIcon from "./icons/LinkedInIcon";
 import styles from '../styles/Sidebar.module.css';
+import PdfIcon from "./icons/PdfIcon";
+
+const LinkedInPath = "https://www.linkedin.com/in/khana30/";
+const PdfIconPath = "/resume.pdf"
 
 const sidebarTopItems = [
   {
@@ -30,6 +35,14 @@ const sidebarTopItems = [
     Icon: MailIcon,
     path: '/contact',
   },
+  {
+    Icon: LinkedInIcon,
+    path: LinkedInPath,
+  },
+  {
+    Icon: PdfIcon,
+    path: PdfIconPath,
+  }
 ];
 
 const sidebarBottomItems = [
