@@ -1,79 +1,107 @@
-import Image from 'next/image';
-import GitHubCalendar from 'react-github-calendar';
-import RepoCard from '../components/RepoCard';
-import styles from '../styles/GithubPage.module.css';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import {
+    faStar,
+    faCodeBranch,
+    faUsers,
+    faCircle,
+    faLink,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const GithubPage = ( { repos, user } ) => {
-    const theme = {
-        level0: '#161B22',
-        level1: '#0e4429',
-        level2: '#006d32',
-        level3: '#26a641',
-        level4: '#39d353',
+import styles from "../styles/GithubPage.module.css";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+const GithubPage = () => {
+    const [data, setData] = useState([]);
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        loadData();
+    }, []);
+
+    const loadData = async () => {
+        fetch(
+            "https://api.github.com/users/abdkhan-git/repos?sort=updated&direction=desc&per_page=12"
+        )
+            .then((response) => response.json())
+            .then((data) => setData(data));
+
+        fetch("https://api.github.com/users/abdkhan-git")
+            .then((response) => response.json())
+            .then((data) => setUser(data));
     };
 
     return (
-        <>
-            <div className={ styles.user }>
-                <div>
-                    <Image
-                        src={ user.avatar_url }
-                        className={ styles.avatar }
-                        alt={ user.login }
-                        width={ 50 }
-                        height={ 50 }
-                    />
-                    <h3 className={ styles.username }>{ user.login }</h3>
-                </div>
-                <div>
-                    <h3>{ user.public_repos } repositórios</h3>
-                </div>
-                <div>
-                    <h3>{ user.followers } seguidores</h3>
-                </div>
+        <div className={styles.container}>
+            <div className={styles.header}>
+                {user.avatar_url && (
+                    <a title="View on Github" href={user.html_url} target="blank">
+                        <Image
+                            src={user.avatar_url}
+                            width={80}
+                            height={80}
+                            className={styles.githubAvatar}
+                        />
+                    </a>
+                )}
+                <span>
+          <a href={`${user.html_url}?tab=repositories`} target="blank">
+            <FontAwesomeIcon icon={faGithub} className={styles.icon} />{" "}
+              {user.public_repos} Public Repos
+          </a>
+        </span>
+
+                <span>
+          <a href={user.followers_url}>
+            <FontAwesomeIcon icon={faUsers} className={styles.icon} />{" "}
+              {`${user.followers} Followers`}
+          </a>
+        </span>
             </div>
-            <div className={styles.contributions}>
-                <GitHubCalendar
-                    username={process.env.NEXT_PUBLIC_GITHUB_USERNAME}
-                    theme={theme}
-                />
+            <h4 className={styles.title}>
+                {data.length} Recently Updated Repositories
+            </h4>
+            <div className={styles.cardContainer}>
+                {data.map((item) => (
+                    <div className={styles.card}>
+                        <h2 className={styles.cardTitle}>{item.name}</h2>
+                        <p className={styles.cardDescription}>{item.description}</p>
+                        <ul className={styles.repositoryDetails}>
+                            <li title="Language" className={styles.cardRepoLang}>
+                                <FontAwesomeIcon icon={faCircle} /> {item.language}
+                            </li>
+                            <li title="Stars">
+                                <FontAwesomeIcon icon={faStar} className={styles.icon} />{" "}
+                                {item.stargazers_count}
+                            </li>
+                            <li title="Forks">
+                                <FontAwesomeIcon icon={faCodeBranch} className={styles.icon} />{" "}
+                                {item.forks_count}
+                            </li>
+                            <li title="View on Github">
+                                <a href={item.html_url} target="blank">
+                                    <FontAwesomeIcon icon={faGithub} className={styles.icon} />
+                                </a>
+                            </li>
+                            {item.homepage && (
+                                <li title="View live preview">
+                                    <a href={item.homepage} target="blank">
+                                        <FontAwesomeIcon icon={faLink} className={styles.icon} />
+                                    </a>
+                                </li>
+                            )}
+                        </ul>
+                    </div>
+                ))}
             </div>
-            <div className={ styles.container }>
-                { repos.map( ( repo ) => (
-                    <RepoCard key={ repo.id } repo={ repo } />
-                ) ) }
-            </div>
-        </>
+        </div>
     );
 };
 
-export async function getStaticProps () {
-    const userRes = await fetch(
-        `https://api.github.com/users/${ process.env.NEXT_PUBLIC_GITHUB_USERNAME }`,
-        {
-            headers: {
-                Authorization: `token ${ process.env.GITHUB_API_KEY }`,
-            },
-        }
-    );
-    const user = await userRes.json();
-
-    const repoRes = await fetch(
-        `https://api.github.com/users/${ process.env.NEXT_PUBLIC_GITHUB_USERNAME }/repos?per_page=100`,
-        {
-            headers: {
-                Authorization: `token ${ process.env.GITHUB_API_KEY }`,
-            },
-        }
-    );
-    let repos = await repoRes.json();
-    repos = repos
-        .sort( ( a, b ) => b.stargazers_count - a.stargazers_count )
-        .slice( 1, 48 );
-
+export async function getStaticProps() {
     return {
-        props: { title: 'GitHub', repos, user },
-        revalidate: 10,
+        props: { title: "Github" },
     };
 }
 

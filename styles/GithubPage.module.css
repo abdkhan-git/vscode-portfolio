@@ -1,58 +1,107 @@
-.user {
+.header {
+  align-items: center;
   background: var(--article-bg);
-  padding: 1.5rem 1rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  margin-bottom: 1.5rem;
-}
-
-.user > div {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  border-right: 2px solid var(--accent-color);
-  padding: 0 1rem;
-  height: 100%;
-}
-
-.user > div:last-child {
-  border-right: none;
-}
-
-.username {
-  margin-left: 10px;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
+  padding: 10px;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 0 0 2rem rgb(10, 10, 10);
+  box-shadow: 0 0 2rem rgb(10, 10, 10);
 }
 
 .title {
-  margin-bottom: 1.5rem;
+  margin-left: 10px;
+}
+.cardContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 30px 0px;
+}
+.card {
+  background: var(--article-bg);
+  padding: 20px;
+  margin-bottom: 15px;
+  width: 24vw;
+  -webkit-box-shadow: 0 0 2rem rgb(10, 10, 10);
+  box-shadow: 0 0 2rem rgb(10, 10, 10);
 }
 
-.contributions article {
-  width: 100% !important;
+.cardTitle {
+  color: var(--accent-color);
+  margin-bottom: 16px;
+  font-size: 20px;
+  text-transform: capitalize;
 }
 
-@media screen and (max-width: 900px) {
-  .user h3 {
-    font-size: 1rem;
-  }
+.cardDescription {
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.cardRepoLang {
+  color: rgb(164, 178, 255);
+}
+
+.repositoryDetails {
+  list-style: none;
+  display: flex;
+  margin: 40px 0px 2px;
+  font-size: 13px;
+}
+
+.repositoryDetails li {
+  margin-right: 20px;
+}
+
+.githubAvatar {
+  border-radius: 50px;
+}
+
+.icon {
+  color: var(--accent-color);
+}
+
+.icon:hover {
+  color: rgb(209, 160, 255);
+}
+
+.header a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.header a:hover {
+  color: rgb(209, 160, 255);
 }
 
 @media screen and (max-width: 600px) {
-  .user h3 {
+  .cardContainer {
+    flex-direction: column;
+  }
+  .card {
+    margin-bottom: 10px;
+    width: 75vw;
+    -webkit-box-shadow: 0 0 2rem rgb(10, 10, 10);
+    box-shadow: 0 0 2rem rgb(10, 10, 10);
+  }
+  .header {
+    flex-direction: column;
+    height: 70vh;
+    margin-bottom: 30px;
+    justify-content: space-evenly;
+  }
+  .title {
+    font-size: 12px;
+  }
+  .repositoryDetails li {
+    margin-right: 10px;
+  }
+  .cardTitle {
     font-size: 14px;
   }
-  .username {
-    display: none;
+
+  .header {
+    height: 40vh;
   }
 }
