@@ -3,8 +3,8 @@ import styles from '../styles/ContactCode.module.css';
 const contactItems = [
   {
     social: 'website',
-    link: 'nitinranganath.me',
-    href: 'https://nitinranganath.me',
+    link: 'abdkhan-dev.netlify.app',
+    href: 'https://abdkhan-dev.netlify.app',
   },
   {
     social: 'email',
