@@ -15,6 +15,21 @@
 .react:hover {
   background: rgba(97, 218, 251, 0.25);
 }
+.javascript {
+  border: 0.1rem solid yellow;
+}
+
+.strapi {
+  border: 0.1rem solid purple;
+}
+
+.scss {
+  border: 0.1rem solid deeppink;
+}
+
+.html {
+  border: 0.1rem solid white;
+}
 
 .node {
   border: 0.1rem solid rgb(131, 205, 41);
@@ -85,3 +100,4 @@
 .css-modules:hover {
   background: rgba(21, 114, 182, 0.25);
 }
+
