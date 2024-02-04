@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Expense Tracker",
-    "image": "https://imgur.com/3sKVhSP.png",
+    "image": "https://imgur.com/fu2I32N.png",
     "description": "A platform for personal finance tracking.",
     "tags": ["node", "react", "mongodb", "tailwind", "react-query"],
     "source_code": "https://github.com/abdkhan-git/Expense-Tracker-App",
@@ -11,15 +11,15 @@
   {
     "id": 2,
     "name": "FutFever",
-    "image": "https://imgur.com/dGtpDbA.png",
+    "image": "https://imgur.com/0WT7Iu7.png",
     "description": "E-commerce website for a football jersey store",
     "tags": ["react", "node", "strapi", "javascript", "scss", "html"],
-    "demo": "https://www.pcbcupid.com/"
+    "source_code": "https://github.com/abdkhan-git/futfever-shop"
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "VSCode Portfolio",
-    "image": "https://imgur.com/mKkz0iz.png",
+    "image": "https://imgur.com/2ZVuckr.png",
     "description": "A themeable and developer-centric portfolio based on the VSCode",
     "tags": ["next", "css-modules", "javascript"],
     "source_code": "https://github.com/abdkhan-git/vscode-portfolio",
