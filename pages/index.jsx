@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styles from '../styles/HomePage.module.css';
 import greetingsData from './greetings.json'
 
+
 const resume = '/resume.pdf';
 const greetings = greetingsData.greetings;
 

@@ -1,3 +1,4 @@
+/*
 const { Client } = require('@notionhq/client');
 
 const notion = new Client({
@@ -53,3 +54,4 @@ export default async (req, res) => {
     res.status(500).json({ msg: 'Failed' });
   }
 };
+*/
