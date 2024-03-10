@@ -16,8 +16,8 @@ const skillItems = [
     {name: "Linux",         rank: 2,        icon: "/logos/linux.svg",               styleName: "icon-linux"},
     {name: "MySQL",         rank: 4,        icon: "/logos/mysql.svg",               styleName: "icon-mysql"},
     {name: "Git",           rank: 4,        icon: "/logos/git.svg",              styleName: "icon-github"},
-    {name: "Next.js",       rank: 3,        icon: "/logos/nextjs2.svg",             styleName: "icon-nextjs"},
-    {name: "Visual Studio", rank: 3,        icon: "/vscode.svg",               styleName: "icon-visual-studio"},
+    {name: "Next.js",       rank: 3,        icon: "/logos/nextjs.svg",             styleName: "icon-nextjs"},
+    {name: "Visual Studio", rank: 3,        icon: "/logos/vscode.svg",               styleName: "icon-visual-studio"},
 ];
 
 
