@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Changed from center to space-between */
     gap: 1rem;
     margin-right: -2rem;
     max-width: 100%;
@@ -11,15 +11,15 @@
 }
 
 .col1 {
-    flex: 4 1;
+    flex: 1; /* Changed from 4 1 to 1 */
 }
 
 .col2 {
-    flex: 5 1;
+    flex: 1; /* Changed from 5 1 to 1 */
 }
 
 .col3 {
-    flex: 3 1;
+    flex: 1; /* Changed from 3 1 to 1 */
 }
 
 .profilePicContainer {
@@ -66,26 +66,37 @@
 }
 
 .heading {
-    margin-left: 80px;
-    margin-bottom: 1.5rem;
+    color: #e6b450;
+    text-align: center;
+    margin-left: auto;
+    margin-bottom: auto;
 }
 
 .heading2 {
-    margin-left: 270px;
-    margin-bottom: 1.5rem;
+    color: #e6b450;
+    text-align: center;
+    margin-left: auto;
+    margin-bottom: auto;
 }
 
 .heading3 {
-    margin-left: 120px;
-    margin-bottom: 1.5rem;
+    color: #e6b450;
+    text-align: center;
+    margin-left: auto;
+    margin-bottom: auto;
 }
 
 .education {
+    color: #e6b450;
     margin-left: 165px;
 }
 
 .ex1 {
-color: #e6b450;
+    text-align: center;
+    margin-left: auto;
+    margin-bottom: auto;
+    color: #e6b450;
+    margin-bottom: 1rem; /* Added margin-bottom */
 }
 
 .certContainer {
@@ -112,7 +123,7 @@ a:hover .icon-arrow {filter: var(--color-filter-gray);}
 
 @media screen and (max-width: 1800px) {
     .col3 {
-        flex: 2 1;
+        flex: 1 1;
     }
 }
 
