@@ -18,8 +18,7 @@ const AboutPage = () => {
 
             card.style.setProperty("--mouse-x", `${x}px`);
             card.style.setProperty("--mouse-y", `${y}px`);
-        };
-
+        }
     };
 
     return (
