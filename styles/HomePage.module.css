@@ -109,6 +109,7 @@
   width: 45rem;
   left: 130px;
   top: 3px;
+  filter: hue-rotate(-25deg);
 }
 
 /* 4K Screens */
