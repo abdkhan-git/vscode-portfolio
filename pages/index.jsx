@@ -50,6 +50,7 @@ export default function HomePage() {
             src="illustration.svg"
             className={styles.illustration}
             alt="illustration"
+            draggable={false}
           />
         </div>
       </div>

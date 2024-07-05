@@ -25,18 +25,19 @@ const AboutPage = () => {
         <div className={styles.container} onMouseMove={handleMouseMove}>
             <div className={styles.col1}>
                 <h1 className={styles.heading}>ABDULLAH KHAN - ABOUT ME </h1>
-                <p>
+                <p className={styles.info}>
                     A self-driven, quick-learning, and passionate sophomore who is majoring in computer science, and
                     actively looking for opportunities in tech.
                 </p>
                 <br></br>
                 <h1 className={styles.education}> EDUCATION </h1>
-                <p>
-                    Farmingdale State College – B.S. Computer Science, Farmingdale, NY (EXPECTED MAY 2026)
+                <p className={styles.info}>
+                    SUNY Farmingdale – B.S. Computer Science, Farmingdale, NY (EXPECTED MAY 2026)
                     <br/><br/>Cumulative GPA: 3.75/4.0
+                </p>
                     <br/><br/>
-                    <ul>
-                        <h3>Relevant Courses:</h3>
+                    <ol className={styles.ul}>
+                        <h2 className={styles.subtitle}>Relevant Courses:</h2>
                         <li>Computer Programming II</li>
                         <li>Calculus II</li>
                         <li>Data Structures & Algorithms I</li>
@@ -46,15 +47,16 @@ const AboutPage = () => {
                         <li>Advanced Programming</li>
                         <li>Software Engineering</li>
                         <li>Discrete Structures</li>
+                        </ol>
                         <br/>
-                        <h3>Activities and Societies</h3>
+                    <ol className={styles.ul}>
+                        <h2 className={styles.subtitle}>Activities and Societies</h2>
                         <li>ACM Technology Club</li>
                         <li>Coding 4 All Club</li>
                         <li>AI and Machine Learning CLub</li>
                         <li>Google Student Developer Club</li>
                         <li>Muslim Student Association</li>
-                    </ul>
-                </p>
+                    </ol>
             </div>
             <div className={styles.col2}>
                 <h1 className={styles.heading2}>EXPERIENCE</h1>
