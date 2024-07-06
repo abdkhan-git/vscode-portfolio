@@ -1,25 +1,34 @@
 [
   {
     "id ": 1,
+    "name": "Kartenchaos",
+    "image": "/logos/kartenchaos.svg",
+    "description": "A card game created by a group of friends with a newly curated list of rules.",
+    "tags": ["html", "css", "javascript", "node.js", "socket.io"],
+    "source_code": "https://github.com/abdkhan-git/Kartenchaos",
+    "demo": "https://kartenchaos.onrender.com/"
+  },
+  {
+    "id ": 2,
+    "name": "Trade Like Nancy Pelosi",
+    "image": "/logos/nancy-stock.svg",
+    "description": "This project checks for new financial disclosures related to Nancy Pelosi and sends email notifications when new trades are detected.",
+    "tags": ["python", "pypdf2"],
+    "source_code": "https://github.com/abdkhan-git/trade-like-nancy"
+  },
+  {
+    "id ": 3,
     "name": "Expense Tracker",
     "image": "/logos/expensecard.svg",
-    "description": "A platform for personal finance tracking.",
+    "description": "A platform to track and monitor personal finances.",
     "tags": ["node", "react", "mongodb", "tailwind", "react-query"],
     "source_code": "https://github.com/abdkhan-git/Expense-Tracker-App",
     "demo": "https://abdkhan-dev-expensetracker.netlify.app/"
   },
   {
-    "id": 2,
-    "name": "FutFever",
-    "image": "/logos/futfever-card.svg",
-    "description": "E-commerce website for a football jersey store",
-    "tags": ["react", "node", "strapi", "javascript", "scss", "html"],
-    "source_code": "https://github.com/abdkhan-git/futfever-shop/tree/main"
-  },
-  {
-    "id": 3,
+    "id": 4,
     "name": "VSCode Portfolio",
-    "image": "/logos/vscard.svg",
+    "image": "/logos/vscode.svg",
     "description": "A themeable and developer-centric portfolio based on the VSCode",
     "tags": ["next", "css-modules", "javascript"],
     "source_code": "https://github.com/abdkhan-git/vscode-portfolio",
