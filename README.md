@@ -1,5 +1,5 @@
 # vscode-portfolio
-[![Open in Visual Studio Code Browser]](https://open.vscode.dev/abdkhan-git/vscode-portfolio)
+[Open the project in Visual Studio Code Browser](https://open.vscode.dev/abdkhan-git/vscode-portfolio)
 
 A Visual Studio Code themed developer portfolio website built with Next.js and deployed on Vercel.
 
