@@ -3,7 +3,8 @@
 
 A Visual Studio Code themed developer portfolio website built with Next.js and deployed on Vercel.
 
-![vscode-portfolio banner](https://imgur.com/JXJ9mpO.gif)
+![image](https://github.com/abdkhan-git/vscode-portfolio/assets/81310252/99fe8d91-475a-4bdc-827f-5fc865f88acb)
+
 
 ## Features Roadmap
 
