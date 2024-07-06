@@ -1,5 +1,5 @@
 # vscode-portfolio
-[![Open is Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/itsnitinr/vscode-portfolio)
+[![Open in Visual Studio Code Browser](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/itsnitinr/vscode-portfolio)
 
 A Visual Studio Code themed developer portfolio website built with Next.js and deployed on Vercel.
 
@@ -9,7 +9,6 @@ A Visual Studio Code themed developer portfolio website built with Next.js and d
 
 - [ ] Themes and customizations
   - [x] GitHub Dark (default)
-  - [ ] One Dark Pro
   - [x] Dracula
   - [x] Ayu
   - [x] Nord
