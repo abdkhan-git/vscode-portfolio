@@ -1,6 +1,14 @@
 [
   {
     "id ": 1,
+    "name": "Secure Password Generator",
+    "image": "/logos/password_generator.svg",
+    "description": "A secure password generator with the use of Python.",
+    "tags": ["python"],
+    "source_code": "https://github.com/abdkhan-git/random_password_generator"
+  },
+  {
+    "id ": 2,
     "name": "Kartenchaos",
     "image": "/logos/kartenchaos.svg",
     "description": "A card game created by a group of friends with a newly curated list of rules.",
@@ -9,7 +17,7 @@
     "demo": "https://kartenchaos.onrender.com/"
   },
   {
-    "id ": 2,
+    "id ": 3,
     "name": "Trade Like Nancy Pelosi",
     "image": "/logos/nancy-stock.svg",
     "description": "This project checks for new financial disclosures related to Nancy Pelosi and sends email notifications when new trades are detected.",
@@ -17,7 +25,7 @@
     "source_code": "https://github.com/abdkhan-git/trade-like-nancy"
   },
   {
-    "id ": 3,
+    "id ": 4,
     "name": "Expense Tracker",
     "image": "/logos/expensecard.svg",
     "description": "A platform to track and monitor personal finances.",
@@ -26,7 +34,7 @@
     "demo": "https://abdkhan-dev-expensetracker.netlify.app/"
   },
   {
-    "id": 4,
+    "id": 5,
     "name": "VSCode Portfolio",
     "image": "/logos/vscode.svg",
     "description": "A themeable and developer-centric portfolio based on the VSCode",
