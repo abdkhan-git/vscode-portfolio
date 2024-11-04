@@ -1,4 +1,3 @@
-/*
 import ArticleCard from '../components/ArticleCard';
 import styles from '../styles/ArticlesPage.module.css';
 
@@ -44,4 +43,3 @@ export async function getStaticProps() {
 }
 
 export default ArticlesPage;
-*/
