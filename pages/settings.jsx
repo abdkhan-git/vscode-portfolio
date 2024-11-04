@@ -7,6 +7,13 @@ const SettingsPage = () => {
       <h2>Manage Themes</h2>
       <div className={styles.container}>
         <ThemeInfo
+            name="Ayu Dark"
+            icon="/ayu.png"
+            publisher="teabyii"
+            theme="ayu-dark"
+            description="A simple theme with bright colors."
+        />
+        <ThemeInfo
           name="GitHub Dark"
           icon="/github-dark.png"
           publisher="GitHub"
@@ -19,13 +26,6 @@ const SettingsPage = () => {
           publisher="Dracula Theme"
           theme="dracula"
           description="Official Dracula Theme. A dark theme for many editors, shells, and more."
-        />
-        <ThemeInfo
-          name="Ayu Dark"
-          icon="/ayu.png"
-          publisher="teabyii"
-          theme="ayu-dark"
-          description="A simple theme with bright colors."
         />
         <ThemeInfo
           name="Ayu Mirage"
