@@ -1,3 +1,4 @@
+/*
 import Image from 'next/image';
 import EyeIcon from '../components/icons/EyeIcon';
 import HeartIcon from '../components/icons/HeartIcon';
@@ -38,3 +39,4 @@ const ArticleCard = ({ article }) => {
 };
 
 export default ArticleCard;
+*/
