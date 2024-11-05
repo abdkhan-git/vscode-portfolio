@@ -7,51 +7,76 @@ const ContactPage = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [isEmailSent, setIsEmailSent] = useState(false); // New state for tracking email sent status
+  const [status, setStatus] = useState({
+    sending: false,
+    error: null,
+    success: false
+  });
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus({ sending: true, error: null, success: false });
 
-    try {
-      const NYLAS_API_KEY_OR_ACCESS_TOKEN = 'nyk_v0_cfnTZ0FVznF9bllfy3d5p9IGM9wpISY6eyU58bxtcyOVViH3a31chHVtTUi3ujbH';
-      const url = `https://api.us.nylas.com/v3/grants/4d7c2e7e-e9e8-4f4c-b494-6d2f2f20736d/messages/send`;
+    // API Configuration
+    const NYLAS_API_KEY = 'nyk_v0_cfnTZ0FVznF9bllfy3d5p9IGM9wpISY6eyU58bxtcyOVViH3a31chHVtTUi3ujbH';
+    const GRANT_ID = '4d7c2e7e-e9e8-4f4c-b494-6d2f2f20736d';
+    const url = `https://api.nylas.com/v3/grants/${GRANT_ID}/messages/send`;
 
-      const data = {
-        subject: subject + " (From web-portfolio)",
-        body: "Body: " + message + "<br>" + "Name:" + name + "<br>" + "User's email: " + email,
-        to: [
-          {
-            name: "Abdullah Khan",
-            email: "abdkhan033@gmail.com"
-          }
-        ],
-        tracking_options: {
-          opens: true,
-          links: true,
-          thread_replies: true,
-          label: "hey just testing"
-        }
-      };
-
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${NYLAS_API_KEY_OR_ACCESS_TOKEN}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send email');
+    // Create email data
+    const emailData = {
+      to: [{ email: "abdkhan033@gmail.com", name: "Abdullah Khan" }],
+      subject: `${subject} (From web-portfolio)`,
+      body: `
+        <div>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message}</p>
+        </div>
+      `,
+      tracking_options: {
+        opens: true,
+        links: true,
+        thread_replies: true
       }
+    };
 
-      setIsEmailSent(true); // Set state to indicate email sent successfully
-      const responseData = await response.json();
-      console.log('Email sent successfully:', responseData);
-    } catch (error) {
-      console.error('Error sending email:', error);
-    }
+    // Make the API request
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${NYLAS_API_KEY}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify(emailData)
+    })
+        .then(response => {
+          if (!response.ok) {
+            return response.text().then(text => {
+              console.error('Error response:', text);
+              throw new Error(`HTTP error! status: ${response.status}`);
+            });
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Success:', data);
+          setStatus({ sending: false, error: null, success: true });
+          // Clear form
+          setName('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          setStatus({
+            sending: false,
+            error: 'Failed to send message. Please try again later or contact directly via email.',
+            success: false
+          });
+        });
   };
 
   return (
@@ -109,13 +134,25 @@ const ContactPage = () => {
                   required
               ></textarea>
             </div>
-            <button type="submit" id="submit">Submit</button>
+            <button
+                type="submit"
+                disabled={status.sending}
+            >
+              {status.sending ? 'Sending...' : 'Submit'}
+            </button>
           </form>
-          {/* Pop-up message when email is successfully sent */}
-          {isEmailSent && (
+
+          {status.success && (
               <div className={styles.popup}>
                 <p>Email sent successfully!</p>
-                <button onClick={() => setIsEmailSent(false)}>Close</button>
+                <button onClick={() => setStatus(prev => ({ ...prev, success: false }))}>Close</button>
+              </div>
+          )}
+
+          {status.error && (
+              <div className={`${styles.popup} ${styles.error}`}>
+                <p>{status.error}</p>
+                <button onClick={() => setStatus(prev => ({ ...prev, error: null }))}>Close</button>
               </div>
           )}
         </div>
